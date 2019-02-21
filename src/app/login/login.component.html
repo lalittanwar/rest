@@ -1,0 +1,35 @@
+<div class="container">
+<form  (submit)="loginuser($event)">
+  <div class="form-group">
+  <label>User Name</label>
+  <input type="text" class="form-control" id="username" placeholder="Enter Name" #usname required ><br>
+  <div *ngIf="usname.errors && (usname.invalid && usname.touched )">
+    <small class="text-danger"  *ngIf="usname.errors.required">Name is required</small>
+</div>
+</div>
+
+  <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Enter Password" >
+    </div><br>
+    <button   class="btn btn-primary" type="submit">Login</button>
+</form><br>
+<button  class="btn btn-success"  routerLink="/dashboard">SignUp</button>
+<br><br>
+<span *ngIf =!c class="text-danger">Invalid Username & Password</span>
+<br>
+</div>
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="square-jelly-box">
+></ngx-spinner>
+
+
+<!--<ul *ngFor="let a of nuser"><li>{{a.name}}</li></ul>-->
+
+
+
+
+
